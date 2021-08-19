@@ -914,29 +914,12 @@
 
 
 
-	<button class="open-button" onclick="openForm()">
-		<a class="navbar-brand" href="index.html"><img src="img/logotranspa.png" width="30px" alt=""></a>
-		ENVIAR MENSAJE</button>
+	 <div class="btn-whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=593969626960" target="_blank">
+            <img src="http://s2.accesoperu.com/logos/btn_whatsapp.png" alt="">
+        </a>
 
-	<div class="form-popup" id="myForm">
-		<form action="/action_page.php" class="form-container">
-			<h1>MENSAJE</h1>
-
-			<label for="">NOMBRE</label>
-			<input type="text" placeholder="TU NOMBRE..." required>
-
-			<label for="email"><b>Email</b></label>
-			<input type="text" placeholder="TU EMAIL..." name="email" required>
-
-			<label for="msj">Mensaje</label>
-			<textarea name="" id="" cols="30" rows="10" placeholder="TU MENSAJE..." style="width: 100%;"
-				required></textarea>
-
-			<button type="submit" class="btn">ENVIAR</button>
-			<button type="button" class="btn cancel" onclick="closeForm()">CERRAR</button>
-		</form>
-	</div>
-
+    </div>
 	<script>
 		function openForm() {
 			document.getElementById("myForm").style.display = "block";
