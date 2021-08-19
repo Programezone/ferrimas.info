@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+	<title>FERRIMAS</title>
+	<link rel="icon" type="image/x-icon" href="img/logotranspa.png" />
+	<!-- Bootstrap core CSS -->
+
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link href="css/styles.css" rel="stylesheet" />
+	<!-- Additional CSS Files -->
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		/* Button used to open the contact form - fixed at the bottom of the page */
+		.open-button {
+			background-color: #E84C3D;
+			color: white;
+			padding: 16px 20px;
+			border: none;
+			cursor: pointer;
+			opacity: 0.8;
+			position: fixed;
+			bottom: 23px;
+			right: 28px;
+			width: 280px;
+		}
+
+		/* The popup form - hidden by default */
+		.form-popup {
+			display: none;
+			position: fixed;
+			bottom: 0;
+			right: 15px;
+			border: 3px solid #f1f1f1;
+			z-index: 9;
+		}
+
+		/* Add styles to the form container */
+		.form-container {
+			max-width: 300px;
+			padding: 10px;
+			background-color: white;
+		}
+
+		/* Full-width input fields */
+		.form-container input[type=text],
+		.form-container input[type=password] {
+			width: 100%;
+			padding: 15px;
+			margin: 5px 0 22px 0;
+			border: none;
+			background: #f1f1f1;
+		}
+
+		/* When the inputs get focus, do something */
+		.form-container input[type=text]:focus,
+		.form-container input[type=password]:focus {
+			background-color: #ddd;
+			outline: none;
+		}
+
+		/* Set a style for the submit/login button */
+		.form-container .btn {
+			background-color: #04AA6D;
+			color: white;
+			padding: 16px 20px;
+			border: none;
+			cursor: pointer;
+			width: 100%;
+			margin-bottom: 10px;
+			opacity: 0.8;
+		}
+
+		/* Add a red background color to the cancel button */
+		.form-container .cancel {
+			background-color: red;
+		}
+
+		/* Add some hover effects to buttons */
+		.form-container .btn:hover,
+		.open-button:hover {
+			opacity: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Navigation-->
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+		<div class="container px-4 px-lg-5">
+			<a class="navbar-brand" href="index.html"><img src="img/logotranspa.png" width="120px" alt=""></a>
+			<a class="navbar-brand" href="index.html" style="color: white;">FERRIMAS</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+					<li class="nav-item"><a class="nav-link active" aria-current="page" href="#!"
+							style="color: white;">Inicio</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">Tienda</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#!">Todos los productos</a></li>
+							<li>
+								<hr class="dropdown-divider" />
+							</li>
+							<li><a class="dropdown-item" href="#!">Popular Items</a></li>
+							<li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+						</ul>
+					</li>
+				</ul>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 20px;">
+						<li style="padding-left: 50px;"><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li style="padding-left: 50px;"><a
+								href="https://www.google.com/maps/place/Ferrimas/@-2.8890834,-79.0469805,15z/data=!4m5!3m4!1s0x0:0xb73c6414c48ab0d5!8m2!3d-2.8880976!4d-79.037625"
+								target="true"><i class="fas fa-map-marker-alt"></i>
+								Virgen del Milagro, Av. Ordoñez Lazo</a></li>
+						<li style="padding-left: 50px;"><a href="#" style="color: green;"><i
+									class="fa fa-whatsapp"></i>0969626960</a></li>
+					</ul>
+
+				</div>
+				<form class="d-flex">
+					<button class="btn btn-outline-light" type="submit">
+						<i class="fas fa-cart-plus"></i>
+						Cart
+						<span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<!--
+	<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.html"><img src="img/logotranspa.png" width="120px" alt=""></a>
+			<a class="navbar-brand" href="index.html" style="font-size: 25px;">FERRIMAS</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent" >
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 20px;">
+					<li style="padding-left: 50px;"><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li style="padding-left: 50px;"><a href="https://www.google.com/maps/place/Ferrimas/@-2.8890834,-79.0469805,15z/data=!4m5!3m4!1s0x0:0xb73c6414c48ab0d5!8m2!3d-2.8880976!4d-79.037625" target="true"><i class="fas fa-map-marker-alt"></i>
+						Virgen del Milagro, Av. Ordoñez Lazo</a></li>
+                    <li style="padding-left: 50px;"><a href="#" style="color: green;" ><i class="fa fa-whatsapp"></i>0969626960</a></li>
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+-->
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+	<div class="carousel-inner">
+		<div class="carousel-item active" data-bs-interval="10000">
+			<img src="img/bannerdwalt.png" class="d-block w-100" alt="...bbbb"></img>
+		</div>
+		<div class="carousel-item" data-bs-interval="2000">
+			<img src="img/bannerdcuatro.png" class="d-block w-100" alt=".aaa..">
+		</div>
+		<div class="carousel-item">
+			<img src="img/bannerdtres.png" class="d-block w-100" alt=".ffff..">
+		</div>
+		<div class="carousel-item">
+			<img src="img/bannerdcuatro.png" class="d-block w-100" alt=".ffff..">
+		</div>
+		<div class="carousel-item">
+			<img src="img/bannerdcinco.png" class="d-block w-100" alt=".ffff..">
+		</div>
+	</div>
+</div>
+
+	<div class="wrap">
+		<h1>NUESTROS PRODUCTOS</h1>
+		<div class="store-wrapper">
+			<div class="category_list">
+				<a href="#" class="category_item" category="all">Todo</a>
+				<a href="#" class="category_item" category="electrico">ELECTRICO</a>
+				<a href="#" class="category_item" category="herramientas">HERRAMIENTAS</a>
+				<a href="#" class="category_item" category="tuberias">TUBERIAS</a>
+				<a href="#" class="category_item" category="pinturas">PINTURAS</a>
+				<a href="#" class="category_item" category="varios">VARIOS</a>
+			</div>
+			<section class="products-list">
+				<!--             START         C A T E G O R I A       H E R R A M I E N T A S https://ar.stanleytools.global/es
+					 https://equiposyherramientasecuador.com/product/sierra-caladora-ks501-b3/  -->
+
+				<div class="product-item" category="herramientas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/herramientas/esmeriladora.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/herramientas/esmeriladora.jpg" alt="">
+					</a>
+					<h6>ESMERILADORA O AMOLADORA ANGULAR DE 4 1/2″ (115mm) 1200W</h6>
+					<a href="#">
+						Abrillantado de metales y otros materiales, Afilado de herramientas, cuchillos, sierras, y
+						otros</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="herramientas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/herramientas/esmeriladora-bd.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/herramientas/esmeriladora-bd.jpg" alt="">
+					</a>
+					<h6>ESMERILADORA O AMOLADORA ANGULAR DE 4 1/2″ (115mm) 820W</h6>
+					<a href="#">sos
+						Abrillantado de metales y otros materiales, Afilado de herramientas, cuchillos, sierras, y
+						otros</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="herramientas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/herramientas/caladora-bd.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/herramientas/caladora-bd.jpg" alt="">
+					</a>
+					<h6>Sierra caladora KS501-B3</h6>
+					<a href="#">Sierra Caladora KS501-B3 Black and Decker cuenta con un soplador automático de polvo</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="herramientas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/herramientas/pelacables-s.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/herramientas/pelacables-s.jpg" alt="">
+					</a>
+					<h6>Pela Cables Auto Ajustable 8 (203mm)</h6>
+					<a href="#">El pela cables se ajusta automáticamente, pela cables de calibre 10-24 AWG.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="product-item" category="herramientas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/herramientas/varias-herrami.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/herramientas/varias-herrami.jpg" alt="">
+					</a>
+					<h6>HERRAMIENTAS BASICAS P/HOGAR PRETUL</h6>
+					<a href="#">Juego de herramientas. Contiene: Desarmador plano ¼» x 4″. Desarmador phillips ¼» x 4″. Pinza 6″. Martillo de uña curva, 16 oz. Cutter 6″ Flexómetro 3 m. Para uso hobby. Pretul</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="herramientas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/herramientas/varias-llaves.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/herramientas/varias-llaves.jpg" alt="">
+					</a>
+					<h6>LLAVES ALLEN STD LARGAS TRUPER</h6>
+					<a href="#">Juego de llaves allen, extralargas, 7 piezas. Truper</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="herramientas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/herramientas/lija-norton.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/herramientas/lija-norton.jpg" alt="">
+					</a>
+					<h6>LIJA DE AGUA N. 2500 MICRO FINA NORTON</h6>
+					<a href="#">Lija De Agua N. 2500 Micro Fina Nortonf 230X280 – 9″X11″ Gr.2500</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="herramientas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/herramientas/broca.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/herramientas/broca.jpg" alt="">
+					</a>
+					<h6>BROCA P/CONCRETO 3/8*6″</h6>
+					<a href="#">Cuerpo de acero al cromo que ofrece mayor resistencia al calentamiento. Punta de carburo de tungsteno que brinda mayor duración.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+
+
+				<!--             END         C A T E G O R I A       H E R R A M I E N T A S   -->
+
+				<!--             START         C A T E G O R I A        T U  B E R I A S  https://www.gfp.com.ec/web/productos/vesbo#-->
+
+				<div class="product-item" category="tuberias" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/tuberia/abrazadera.jpg" data-lightbox="image-1" style="padding-top: 0;">
+						<img src="img/PRODUCTOS/tuberia/abrazadera.jpg" alt="">
+					</a>
+					<h6>ABRAZADERA</h6>
+					<a href="#">Utilizadas para fijar las tuberías al suelo o a las paredes</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="tuberias" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/tuberia/adaptadorhembra.jpg" data-lightbox="image-1" style="padding-top: 0;">
+						<img src="img/PRODUCTOS/tuberia/adaptadorhembra.jpg" alt="">
+					</a>
+					<h6>ADAPTADOR HEMBRA</h6>
+					<a href="#">Se utiliza como parte de la transición entre tuberías de termofusión y tuberías
+						roscadas</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="tuberias" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/tuberia/reductorm-h.jpg" data-lightbox="image-1" style="padding-top: 0;">
+						<img src="img/PRODUCTOS/tuberia/reductorm-h.jpg" alt="">
+					</a>
+					<h6>REDUCTOR M-H</h6>
+					<a href="#">Se utiliza para unir tuberías de mayor tamaño a tuberías de menor tamaño</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="tuberias" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/tuberia/nudo.jpg" data-lightbox="image-1" style="padding-top: 0;">
+						<img src="img/PRODUCTOS/tuberia/nudo.jpg" alt="">
+					</a>
+					<h6>NUDO</h6>
+					<a href="#">Se utiliza para unir tuberías sin necesidad de girarlas</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="tuberias" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/tuberia/puente-largo.jpg" data-lightbox="image-1" style="padding-top: 0;">
+						<img src="img/PRODUCTOS/tuberia/puente-largo.jpg" alt="">
+					</a>
+					<h6>PUENTE LARGO</h6>
+					<a href="#">Se utiliza donde una tubería tiene que pasar por encima de otra tubería sin que exista
+						roce y/o desgaste entre ellas</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="tuberias" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/tuberia/tuberia-agua-fria.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/tuberia/tuberia-agua-fria.jpg" alt="">
+					</a>
+					<h6>TUBERIA AGUA FRIA PN10</h6>
+					<a href="#">Se utiliza para intalaciones de agua fría, aire comprimido e instalaciones de baja
+						presión</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="tuberias" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/tuberia/tuberia-agua-caliente.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/tuberia/tuberia-agua-caliente.jpg" alt="">
+					</a>
+					<h6>TUBERÍA PN 16 PARA AGUA CALIENTE Y/O FRÍA</h6>
+					<a href="#">Se utiliza para intalaciones de agua caliente, fría e instalaciones de alta presión</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="tuberias" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/tuberia/tuberia-agua-caliente-20.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/tuberia/tuberia-agua-caliente-20.jpg" alt="">
+					</a>
+					<h6>TUBERÍA PN 20 PARA AGUA CALIENTE Y/O FRÍA</h6>
+					<a href="#">Se utiliza para intalaciones de agua caliente, fría e instalaciones de alta presión</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!--          END            C A T E G O R I A        T U  B E R I A S-->
+
+
+				<!--             STARTS         C A T E G O R I A       E L E C T R I C O   -->
+
+				<div class="product-item" category="electrico" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/electrico/corta-pico.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/electrico/corta-pico.jpg" alt="">
+					</a>
+					<h6>CORTAPICO CUADR 8TOMAS 110J 1M 3X14 VOLT</h6>
+					<a href="#">Cortapico multicontacto uso pesado, 8 entradas aterrizadas y polarizadas</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="electrico" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/electrico/taipe-truper.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/electrico/taipe-truper.jpg" alt="">
+					</a>
+					<h6>TAIPE ELECTRI TRUPER 10Y NEGRO 9MT</h6>
+					<a href="#">Cintas fabricadas en pvc con base de adhesivo acrílico, retardantes a la flama</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="electrico" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/electrico/cable-gemelo.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/electrico/cable-gemelo.jpg" alt="">
+					</a>
+					<h6>CABLE GEMELO 18 AWG C/M INCABLE</h6>
+					<a href="#">Conductor de cobre electrolítico suave aislado con PVC 60°C.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="electrico" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/electrico/toma-dos.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/electrico/toma-dos.jpg" alt="">
+					</a>
+					<h6>TOMACORRIENTE POLARI DOBL BLAN 1PZ PLATA VETO</h6>
+					<a href="#">Tomacorriente polarizado 2 polos + tierra; fabricado en policarbonato autoext</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="electrico" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/electrico/toma-mixto.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/electrico/toma-mixto.jpg" alt="">
+					</a>
+					<h6>TOMACORRIENTE POLA+INTERR LP BLAN PLATA</h6>
+					<a href="#">Tomacorriente : VIN= 125/250 VAC ; IMAX= 15 A; tomacorriente polarizado 2 polos + tierra Interruptor: VIN= 12</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="electrico" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/electrico/breaker.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/electrico/breaker.jpg" alt="">
+					</a>
+					<h6>BREAKER SOBREPUESTO 2X70 TQC G.E</h6>
+					<a href="#">70 amperios • Breaker Sobrepuesto 2 polos • Corriente nominal: 10 a 100 A • Sello “UL.” • Resistencia 10.000</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="electrico" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/electrico/enchufe.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/electrico/enchufe.jpg" alt="">
+					</a>
+					<h6>ENCHUFE POLARIZADO 2P 15A 125V VOLTECH</h6>
+					<a href="#">Fabricada en ABS y policarbonato. Terminales fabricadas en aleación de cobre. Plástica 2 polos y 3 hilos, aterrizada.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="electrico" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/electrico/panel-mo.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/electrico/panel-mo.jpg" alt="">
+					</a>
+					<h6>PANEL MONOFASICO 4 ESPA QOL4PT ECONO</h6>
+					<a href="#">Centro de carga para una y dos fases, económico – plan techo, cuatro (4) espacios, para instalación de breaker</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+
+
+				<!--             END         C A T E G O R I A       E L E C T R I C O   -->
+
+				<!--             STRART         C A T E G O R I A       P I N T U R A  
+				https://www.pinturascondor.com/product/permalatex-satinado/
+
+				https://kywitiendaenlinea.com/product/cinta-doble-faz-espuma-blanca-5mx12mm-abro/
+				-->
+
+				<div class="product-item" category="pinturas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/pinturas/pintura-spray.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/pinturas/pintura-spray.jpg" alt="">
+					</a>
+					<h6>PINTURA SPRAY AZUL OBSCURO N.38 ABRO</h6>
+					<a href="#">Esmalte sintético en spray para durabilidad y rendimiento. Alta calidad, rápido secado.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="pinturas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/pinturas/empaste.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/pinturas/empaste.jpg" alt="">
+					</a>
+					<h6>EMPASTE P/INTERIOR SIKA 20KLS C/ADITIVO</h6>
+					<a href="#">Empaste Blanco para Interiores es una base acrílica para pinturas, de excelente acabado estético y decorativo.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="pinturas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/pinturas/brocha.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/pinturas/brocha.jpg" alt="">
+					</a>
+					<h6>BROCHA MANGO D/MADERA 1 1/2″</h6>
+					<a href="#">Brocha de cerdas sintéticas, mango de madera. Corte angular. 1-1/2″. Truper.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="pinturas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/pinturas/rodillo.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/pinturas/rodillo.jpg" alt="">
+					</a>
+					<h6>RODILLO D/FELPA 9″ EXTRA RUGOSO</h6>
+					<a href="#">Felpa de poliéster, en color naranja. Tubo y mango del maneral de polipropileno. </a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="pinturas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/pinturas/pintura-condor-alto-ren.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/pinturas/pintura-condor-alto-ren.jpg" alt="">
+					</a>
+					<h6>Pintura Arquitectónica Satinada</h6>
+					<a href="#">Pintura Arquitectónica satinada de alto desempeño, ideal tanto para interiores como exteriores.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="pinturas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/pinturas/pintura-condor-proteger.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/pinturas/pintura-condor-proteger.jpg" alt="">
+					</a>
+					<h6>Pintura Arquitectónica Vinil- Acrílica</h6>
+					<a href="#">Pintura arquitectónica tipo vinil-acrílica, diseñada para proteger y decorar los acabados tanto interiores como exteriores.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="pinturas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/pinturas/pintura-condor-recubrimien.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/pinturas/pintura-condor-recubrimien.jpg" alt="">
+					</a>
+					<h6>Recubrimiento Protector</h6>
+					<a href="#">Recubrimiento de superficies metálicas, madera y mampostería en interiores y/o exteriores.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="pinturas" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/pinturas/pintur-spry-alta-tempera.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/pinturas/pintur-spry-alta-tempera.jpg" alt="">
+					</a>
+					<h6>PINTURA SPRAY ALTA TEMP 8ONZ NEGRO ABRO</h6>
+					<a href="#">Pintura en spray alta temperatura Abro, 8oz (227 gr), Resistente a 800°C, Uso Industrial, Comercial y Domestico</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<!--             END         C A T E G O R I A       P I N T U R A -->
+
+				<!--             START         C A T E G O R I A       V A R I O S  
+				https://kywitiendaenlinea.com/product/jgo-acc-albi-completo-6pz-cr-e179-17-y2dh-cr/
+				-->
+				<div class="product-item" category="varios" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/varios/plastico.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/varios/plastico.jpg" alt="">
+					</a>
+					<h6>PLASTICO POLIET NEGRO 0.6CAX1.5M C/M</h6>
+					<a href="#">Utilizado como impermeabilizante entre la tierra y el contrapiso, protector materiales cemento arena y otros</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="varios" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/varios/malla-cerram.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/varios/malla-cerram.jpg" alt="">
+					</a>
+					<h6>MALLA P/CERRAMIENTO 50/12 A=1,50MT C/M</h6>
+					<a href="#">Malla de cerramiento fabricada con alambres triple galvanizados (3Zn®) entrelazados, más resistentes y permite una baja inversión en mantenimiento. Altura: 1.50 metros.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="varios" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/varios/plastico-transp.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/varios/plastico-transp.jpg" alt="">
+					</a>
+					<h6>PLASTICO TRANSPA 0.6CAX1.5M C/M</h6>
+					<a href="#">Plástico natural transparente tubular 1,50 m. ancho x 100 m. largo</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="varios" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/varios/plastico-extratech.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/varios/plastico-extratech.jpg" alt="">
+					</a>
+					<h6>PLASTICO STRECH FILM 12CM C/ROLLO 1KG</h6>
+					<a href="#">Protege y agrupa objetos. Ancho: 12 cm. Rollo de 1 kg. Fácil manipulación y gran adherencia. Disminuye problemas de entrega de productos.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="varios" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/varios/abrazadera.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/varios/abrazadera.jpg" alt="">
+					</a>
+					<h6>ABRAZADERA A.INOX 156-178X12,7MM C/U FIERO
+					</h6>
+					<a href="#">Abrazaderas reforzadas N.º 104. Ancho: 12.7 mm. Ø mínimo: 156 mm – Ø máx: 178 mm. Fabricada en acero inoxidable.</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="varios" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/varios/rueda.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/varios/rueda.jpg" alt="">
+					</a>
+					<h6>RUEDA NEUMATICA 13″ 5/8 400LB MINTCRAFT</h6>
+					<a href="#">Rueda neumatica 13″ 5/8 400lb Mintcraft</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="varios" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/varios/ducha-fv.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/varios/ducha-fv.jpg" alt="">
+					</a>
+					<h6>DUCHA CREIN AUTOLIMPIANTE FV</h6>
+					<a href="#">Cabeza de ducha Crein autolimpiante, con brazo de ducha. Acabado cromo. Fabricada en ABS. FV</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="product-item" category="varios" style="background-color: rgb(216, 216, 216);">
+					<a href="img/PRODUCTOS/varios/accesorios-ducha.jpg" data-lightbox="image-1"
+						style="padding-top: 0;">
+						<img src="img/PRODUCTOS/varios/accesorios-ducha.jpg" alt="">
+					</a>
+					<h6>JGO ACC. ALBI COMPLETO 6PZ CR E179.17/Y2DH CR</h6>
+					<a href="#">Juego de 6 accesorios Línea Albu. Acabado cromo. Fabricados en metal. Recipientes en vidrio. Incluye: Portacepillos, 
+						Jabonera, Portarrollo. Gancho. Toallero de Barra. Toallero de Aro. Set de instalación. FV</a>
+					<div class="container" style="padding-top: 1px; padding-bottom: 1px; text-align: center;">
+						<div class="text-center">
+							<a class="btn btn-outline-dark mt-auto" href="#">
+								<i class="fas fa-cart-plus"></i>
+								AGREGAR
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!--             END         C A T E G O R I A       V A R I O S    -->
+
+
+
+
+			</section>
+		</div>
+	</div>
+	<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active" data-bs-interval="10000">
+				<img src="img/bannerdwalt.png" class="d-block w-100" alt="...bbbb"></img>
+			</div>
+			<div class="carousel-item" data-bs-interval="2000">
+				<img src="img/bannerdcuatro.png" class="d-block w-100" alt=".aaa..">
+			</div>
+			<div class="carousel-item">
+				<img src="img/bannerdtres.png" class="d-block w-100" alt=".ffff..">
+			</div>
+			<div class="carousel-item">
+				<img src="img/bannerdcuatro.png" class="d-block w-100" alt=".ffff..">
+			</div>
+			<div class="carousel-item">
+				<img src="img/bannerdcinco.png" class="d-block w-100" alt=".ffff..">
+			</div>
+		</div>
+	</div>
+	<img src="img/5th-section.jpg" style="width: 100%; " alt=""><br>
+
+
+
+
+
+
+
+	<button class="open-button" onclick="openForm()">
+		<a class="navbar-brand" href="index.html"><img src="img/logotranspa.png" width="30px" alt=""></a>
+		ENVIAR MENSAJE</button>
+
+	<div class="form-popup" id="myForm">
+		<form action="/action_page.php" class="form-container">
+			<h1>MENSAJE</h1>
+
+			<label for="">NOMBRE</label>
+			<input type="text" placeholder="TU NOMBRE..." required>
+
+			<label for="email"><b>Email</b></label>
+			<input type="text" placeholder="TU EMAIL..." name="email" required>
+
+			<label for="msj">Mensaje</label>
+			<textarea name="" id="" cols="30" rows="10" placeholder="TU MENSAJE..." style="width: 100%;"
+				required></textarea>
+
+			<button type="submit" class="btn">ENVIAR</button>
+			<button type="button" class="btn cancel" onclick="closeForm()">CERRAR</button>
+		</form>
+	</div>
+
+	<script>
+		function openForm() {
+			document.getElementById("myForm").style.display = "block";
+		}
+
+		function closeForm() {
+			document.getElementById("myForm").style.display = "none";
+		}
+	</script>
+
+
+	<script src="js/jquery-3.2.1.js"></script>
+	<script src="js/script.js"></script>
+	<script src="https://kit.fontawesome.com/a95698fdab.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
